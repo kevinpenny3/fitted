@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import * as firebase from 'firebase';
 import { BrowserRouter as Router } from "react-router-dom";
-import Fitted from "./components/Fitted";
+import Fitted from './components/Fitted';
+
 
 // var firebaseConfig = {
 //     apiKey: "AIzaSyBpPKG8dNqBCowzdmRhiFSxFYIrSHtAWvg",
