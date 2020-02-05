@@ -11,13 +11,16 @@ export default (props) => {
             </div>
             <ul className="navbarList">
             <li className="navbar__item">
+                <Link className="navbar__link" to="/">Home</Link>
+            </li>
+            <li className="navbar__item">
                 <Link className="navbar__link" to="/addItems">Add Items</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/createOutfit">Create Outfit</Link>
+                <Link className="navbar__link" to="/createOutfit">Create Fit</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/find">Find Outfit</Link>
+                <Link className="navbar__link" to="/find">Find Fit</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/closet">View Closet</Link>

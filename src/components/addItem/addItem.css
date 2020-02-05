@@ -1,0 +1,9 @@
+.clothingForm {
+    width: 75%;
+
+}
+
+.fileUpload {
+    display: flex;
+    margin-top: .5rem;
+}

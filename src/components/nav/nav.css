@@ -2,6 +2,8 @@
     display: flex;
     background-color: white;
     padding-top: .2rem;
+    margin: -15px -15px 0 -15px;
+    padding: 15px 15px 0 15px;
 }
 .navbarList{
     align-content: center;
@@ -14,7 +16,7 @@
 }
 
 .navbar__item {
-    flex-basis: 50%;
+    flex-basis: 100%;
     list-style-type: none;
     text-align: center;
 }
@@ -26,12 +28,9 @@
     align-content: center;
 }
 
-.navbar__link:hover {
-    background-color: gray;
-}
-
 img{
     padding: .5rem;
     width:  25%;
     height: 75%;
 }
+
