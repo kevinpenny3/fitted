@@ -1,13 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "./Nav.css"
+import logo from "./fittedNavBar.png"
 
 export default (props) => {
     return (
-        <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Fitted</Link>
-            </li>
+        <div className="navbar">
+            <div className="navBarLogo">
+                <img src={logo} alt="logo"></img>
+            </div>
+            <ul className="navbarList">
             <li className="navbar__item">
                 <Link className="navbar__link" to="/addItems">Add Items</Link>
             </li>
@@ -20,9 +22,7 @@ export default (props) => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/closet">View Closet</Link>
             </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/logout">Logout</Link>
-            </li>
+        
 
 
 {
@@ -40,5 +40,6 @@ export default (props) => {
         : ""
 }
         </ul>
+        </div>
     )
 }

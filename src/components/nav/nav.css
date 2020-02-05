@@ -1,10 +1,37 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    background-color: white;
+    padding-top: .2rem;
+}
+.navbarList{
+    align-content: center;
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+}
+.navBarLogo{
+    margin: 1px;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    flex-basis: 50%;
     list-style-type: none;
+    text-align: center;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    align-content: center;
+}
+
+.navbar__link:hover {
+    background-color: gray;
+}
+
+img{
+    padding: .5rem;
+    width:  25%;
+    height: 75%;
 }

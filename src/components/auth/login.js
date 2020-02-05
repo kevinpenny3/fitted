@@ -29,24 +29,10 @@ const Login = props => {
                     props.history.push("/")
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
-                } else if (!exists) {
-                    fetch("http://localhost:8088/users", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            email: email.current.value,
-                            password: password.current.value,
-                        })
-                    })
-                        .then(_ => _.json())
-                        .then(response => {
-                            localStorage.setItem("fitted_user", response.id)
-                            props.history.push("/")
-                        })
-                }
-            })
+            }else if (!exists){
+                window.alert("User Not Found Please Register")
+            }
+        })
     }
 
     return (
