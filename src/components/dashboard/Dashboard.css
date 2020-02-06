@@ -1,0 +1,36 @@
+.favoritesList {
+    width: 98%;
+    height: 25rem;
+    background-color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+
+}
+
+.container--dashboard {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filterList {
+    margin-top: 1rem;
+    width: 98%;
+    padding: 1rem;
+}
+
+.clothingTypeFilters {
+    display: flex;
+    justify-content: center;
+}
+.clothingTypeFilters button {
+    margin: .2rem;
+}
+.styleFilters {
+    display: flex;
+    justify-content: center;
+}
+.styleFilters button {
+    margin: .2rem;
+}

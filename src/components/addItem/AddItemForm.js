@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import "./addItem.css"
+import "./AddItem.css"
 import { ClothingContext } from "../clothing/ClothingProvider"
 import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
 
