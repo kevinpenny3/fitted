@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import "./Logins.css"
+import logo from "./fittedNavBar.png"
 
 const Register = props => {
     const username = useRef()
@@ -51,7 +52,10 @@ const Register = props => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Nutshell</h1>
+                <div className="navBarLogo">
+                        <img src={logo} alt="logo"></img>
+                    </div>
+                <h2 className="h3 mb-3 font-weight-normal">Register</h2>
                 <fieldset>
                     <label htmlFor="inputUsername"> Username </label>
                     <input ref={username} type="username"

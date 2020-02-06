@@ -7,17 +7,21 @@ fieldset {
     padding: 1rem 0;
     margin: 0;
     border: 0;
+    align-items: center;
 }
 
 .form--login {
     display: inline-block;
     margin: 0 auto;
     text-align: left;
+    background-color: white;
 }
 
+.form--login > fieldset > input[type="username"],
 .form--login > fieldset > input[type="email"],
 .form--login > fieldset > input[type="password"] {
-    width: 25em;
+    width: 30em;
+    align-content: center;
 }
 
 .label--login {
@@ -27,7 +31,6 @@ fieldset {
 
 .form-control {
     display: block;
-    width: 100%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -50,8 +53,31 @@ fieldset {
     background-position-x: right;
     z-index: 1;
     min-height: 25rem;
-    min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
+    min-width: 25rem;
+    background-color: white;
+    padding: 1rem;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    max-width: 32rem;
+    border-radius: .30rem;
+}
+
+.navBarLogo {
+    width: auto;
+    align-content: center;
+}
+
+img{
+    padding: .5rem;
+    width:  40%;
+    height: 90%;
+}
+
+.link--register{
+    margin-top: 1rem;
+}
+.link--register a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }

@@ -66,7 +66,7 @@ export default props => {
                     id="image"
                     name="image"
                     defaultValue={clothing.clothingType}
-                    required
+                    // required
                     autoFocus
                     className="fileUpload"
                     placeholder="image"
@@ -83,7 +83,7 @@ export default props => {
                     id="clothingType"
                     name="clothingType"
                     defaultValue={clothing.clothingType}
-                    required
+                    // required
                     autoFocus
                     className="form-control"
                     placeholder="Clothing Type"
