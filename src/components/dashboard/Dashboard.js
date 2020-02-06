@@ -15,7 +15,11 @@ return (
                 }>
                     Top Filter
                 </button>
-                <button className="bottomFilter">Bottom Filter</button>
+                <button className="bottomFilter" onClick={() => 
+                    props.history.push("/bottoms/2")
+                }>
+                    Bottom Filter
+                </button>
                 <button className="shoeFilter">Shoe Filter</button>
                 <button className="accesroyFilter">Accessories Filter</button>
             </div>

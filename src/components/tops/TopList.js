@@ -23,7 +23,7 @@ export default (props) => {
                 <h1>My Tops</h1>
                 <article className="topsList"> {
                     foundTops.map(foundTop => {
-                        return <Top key={foundTop.id} clothing={foundTop} />
+                        return <Top {...props} key={foundTop.id} clothing={foundTop} />
                     }
                         )
                 }
