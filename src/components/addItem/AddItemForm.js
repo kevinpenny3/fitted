@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from "react"
 import "./addItem.css"
 import { ClothingContext } from "../clothing/ClothingProvider"
+import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
 
 export default props => {
     const { clothings, addClothing, updateClothing } = useContext(ClothingContext)
     const [clothing, setClothing] = useState({})
-
+    const { clothingTypes } = useContext(ClothingTypeContext)
+    console.log(clothingTypes)
     const editMode = props.match.params.hasOwnProperty("clothingId")
 
     const handleControlledInputChange = (evt) => {
@@ -37,15 +39,14 @@ export default props => {
         if (editMode) {
             updateClothing({
                 id: clothing.id,
-                clothingTypeId: clothing.clothingType,
+                clothingTypeId: clothing.id,
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
                 .then(() => props.history.push("/"))
         } else {
             addClothing({
-                id: clothing.id,
-                clothingTypeId: clothing.type,
+                clothingTypeId: parseInt((clothing.clothingType),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
@@ -56,10 +57,11 @@ export default props => {
 
 
     return (
+        <main className="container--addItem">
         <form className="clothingForm">
-            <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "New Clothing"}</h2>
+            <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "Add Item"}</h2>
 
-            <div className="form-group uploadForm">
+            <div className="form-group">
                 <label htmlFor="addPhoto">Add Photo</label>
                 <input
                     type="file"
@@ -82,14 +84,21 @@ export default props => {
                     type="select"
                     id="clothingType"
                     name="clothingType"
-                    defaultValue={clothing.clothingType}
+                    defaultValue = ""
                     // required
                     autoFocus
                     className="form-control"
                     placeholder="Clothing Type"
                     proptype="int"
                     onChange={handleControlledInputChange}
-                    />
+                    >
+                    <option value="0">Clothing Type</option>
+                    {clothingTypes.map(ct => (
+                        <option key={ct.id} value={ct.id}>
+                            {ct.type}
+                        </option>
+                    ))}
+                    </select>
             </div>
                     </fieldset>
                     <fieldset>
@@ -113,7 +122,8 @@ export default props => {
                     {evt.preventDefault() 
                     constructNewClothing()
                     }}
-                className="btn btn-primary"> {editMode ? "Update Clothing": "Make Clothing"} </button>
+                className="btn btn-primary"> {editMode ? "Update Clothing": "Save Item"} </button>
         </form>
+        </main>
     )
 }
