@@ -40,6 +40,13 @@ export const ClothingProvider = (props) => {
             .then(getClothings)
     }
 
+    const deleteClothing = clothing => {
+        return fetch(`http://localhost:8088/clothing/${clothing.id}`, {
+            method: "DELETE",
+        })
+            .then(getClothings)
+    }
+
     /*
         Load all animals when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -54,7 +61,7 @@ export const ClothingProvider = (props) => {
 
     return (
         <ClothingContext.Provider value={{
-            clothings, addClothing, updateClothing
+            clothings, addClothing, updateClothing, deleteClothing
         }}>
             {props.children}
         </ClothingContext.Provider>
