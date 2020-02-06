@@ -10,7 +10,7 @@
     flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     align-content: center;
 }
 
