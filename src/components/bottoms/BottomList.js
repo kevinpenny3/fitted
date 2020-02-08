@@ -18,12 +18,16 @@ export default (props) => {
         )
         console.log(foundBottoms)
 
+        const userBottoms = foundBottoms.filter(clothing =>
+            clothing.userId === parseInt(localStorage.getItem("fitted_user"), 10))
+            console.log("found user bottoms", userBottoms)
+
         return(
             <div className="bottoms">
                 <h1>My Bottoms</h1>
                 <article className="bottomsList"> {
-                    foundBottoms.map(foundBottom => {
-                        return <Bottom {...props} key={foundBottom.id} clothing={foundBottom} />
+                    userBottoms.map(userBottom => {
+                        return <Bottom {...props} key={userBottom.id} clothing={userBottom} />
                     }
                         )
                 }

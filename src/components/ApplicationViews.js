@@ -5,6 +5,7 @@ import ProviderProvider from "./providerProvider/ProviderProvider"
 import Dashboard from "./dashboard/Dashboard"
 import TopList from "./tops/TopList"
 import BottomList from "./bottoms/BottomList"
+import ShoeList from "./shoes/ShoeList"
 
 
 
@@ -25,9 +26,14 @@ export default (props) => {
                     props => <BottomList {...props} />
                 } />
 
+                <Route exact path="/shoes/:ctId(\d+)" render={
+                    props => <ShoeList {...props} />
+                } />
+
                 <Route exact path="/addItems" render={
                     props => <AddItemForm {...props} />
                 } />
+
             </ProviderProvider>
 
         </>

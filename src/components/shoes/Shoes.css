@@ -1,0 +1,33 @@
+.top {
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.topsList {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.clothing--image img {
+    width: 300px;
+    height: 300px;
+    padding: 1rem;
+}
+.clothing--image {
+    margin-left: auto;
+}
+
+.clothing__color {
+    margin-bottom: .5rem;
+}
+
+h1 {
+    text-align: center;
+    font-weight: lighter;
+}
