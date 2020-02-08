@@ -7,7 +7,6 @@ export default props => {
     const { clothings, addClothing, updateClothing } = useContext(ClothingContext)
     const [clothing, setClothing] = useState({})
     const { clothingTypes } = useContext(ClothingTypeContext)
-    console.log(clothingTypes)
     const editMode = props.match.params.hasOwnProperty("clothingId")
 
     const handleControlledInputChange = (evt) => {
@@ -39,7 +38,7 @@ export default props => {
         if (editMode) {
             updateClothing({
                 id: clothing.id,
-                clothingTypeId: clothing.id,
+                clothingTypeId: parseInt((clothing.clothingType),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
@@ -85,7 +84,7 @@ export default props => {
                     id="clothingType"
                     name="clothingType"
                     defaultValue = ""
-                    // required
+                    required
                     autoFocus
                     className="form-control"
                     placeholder="Clothing Type"
