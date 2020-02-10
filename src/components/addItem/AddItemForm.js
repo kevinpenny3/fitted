@@ -38,14 +38,14 @@ export default props => {
         if (editMode) {
             updateClothing({
                 id: clothing.id,
-                clothingTypeId: parseInt((clothing.clothingType),10),
+                clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
                 .then(() => props.history.push("/"))
         } else {
             addClothing({
-                clothingTypeId: parseInt((clothing.clothingType),10),
+                clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
@@ -66,7 +66,7 @@ export default props => {
                     type="file"
                     id="image"
                     name="image"
-                    defaultValue={clothing.clothingType}
+                    defaultValue=""
                     // required
                     autoFocus
                     className="fileUpload"
@@ -80,15 +80,13 @@ export default props => {
             <div className="form-group">
                 <label htmlFor="title">Type</label>
                 <select
-                    type="select"
-                    id="clothingType"
-                    name="clothingType"
-                    defaultValue = ""
+                    // type="select"
+                    id="clothingTypeId"
+                    name="clothingTypeId"
+                    value = {clothing.clothingTypeId}
                     required
                     autoFocus
                     className="form-control"
-                    placeholder="Clothing Type"
-                    proptype="int"
                     onChange={handleControlledInputChange}
                     >
                     <option value="0">Clothing Type</option>

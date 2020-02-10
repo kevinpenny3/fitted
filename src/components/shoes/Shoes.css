@@ -1,4 +1,4 @@
-.top {
+.shoe {
     margin: 1em;
     padding: 1em;
     background-color: white;
@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.topsList {
+.shoesList {
     flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
