@@ -27,7 +27,7 @@ export default (props) => {
                 <h1>My Bottoms</h1>
                 <article className="bottomsList"> {
                     userBottoms.map(userBottom => {
-                        return <BottomChoices {...props} key={userBottom.id} clothing={userBottom} />
+                        return <BottomChoices setBottomSelect={props.setBottomSelect} {...props} key={userBottom.id} clothing={userBottom} />
                     }
                         )
                 }

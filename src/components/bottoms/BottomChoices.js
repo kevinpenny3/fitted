@@ -1,11 +1,10 @@
 import React, { useContext } from "react"
 import "./Bottoms.css"
-import bottom from "./bottomsample.jpg"
 import { ClothingContext } from "../clothing/ClothingProvider"
 
 
 
-export default ({ clothing, history }) => {
+export default ({ clothing, history, setBottomSelect }) => {
 
     const { clothings } = useContext(ClothingContext)
 
@@ -16,6 +15,7 @@ export default ({ clothing, history }) => {
         
         <div> 
           <button onClick={() => {
+              setBottomSelect(clothing.itemImage)
                    history.push(`/createOutfit`)
                 }}>Select Bottom</button>
         
@@ -28,7 +28,7 @@ export default ({ clothing, history }) => {
     return(
     <section className="bottom">
         <div className="clothing--image">
-            <img src={bottom}></img>
+            <img src={require (`./${clothing.itemImage}`)}></img>
         </div>
         <div className="clothing--color">{clothing.color}</div>
         {activeUserClothing(clothing, history)}

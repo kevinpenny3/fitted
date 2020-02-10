@@ -26,7 +26,9 @@ return (
                     Shoe Filter
                     
                 </button>
-                <button className="accessoryFilter">Accessories Filter</button>
+                <button className="accessoryFilter" onClick={() => 
+                    props.history.push("/accessories/4")
+                }>Accessories Filter</button>
             </div>
             <div className="styleFilters">
                 <button className="casualFilter">Casual</button>

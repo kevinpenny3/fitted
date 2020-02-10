@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import "./OutfitDash.css"
 import { StyleContext } from "../styles/StyleProvider"
 import { OutfitContext } from "./OutfitProvider"
@@ -7,9 +7,14 @@ import { OutfitContext } from "./OutfitProvider"
 
 const OutfitDash = props => {
 
-    const { styles } = useContext(StyleContext)
-    const { outfit, setOutfit } = useContext(OutfitContext)
+    
 
+    const { styles } = useContext(StyleContext)
+    const { outfits, addOutfit, updateOutfit } = useContext(OutfitContext)
+    const [outfit, setOutfits] = useState({})
+    const editMode = props.match.params.hasOwnProperty("outfitId")
+
+    console.log(props.topSelect)
     const handleControlledInputChange = (evt) => {
         /*
             When changing a state object or array, always create a new one
@@ -18,8 +23,36 @@ const OutfitDash = props => {
         const newOutfit = Object.assign({}, outfit)
         newOutfit[evt.target.name] = evt.target.value
         console.log(newOutfit)
-        setOutfit(newOutfit)
+        setOutfits(newOutfit)
     }
+
+    const setDefaults = () => {
+        if (editMode) {
+            const outfitId = parseInt(props.match.params.outfitId)
+            const selectedOutfit = outfit.find(o => o.id === outfitId) || {}
+            setOutfits(selectedOutfit)
+            console.log(selectedOutfit)
+        
+        }
+    }
+
+    const constructNewOutfit = () => {
+        if (editMode) {
+            updateOutfit({
+                id: outfit.id,
+                styleId: parseInt((styles.Id),10),
+                userId: parseInt(localStorage.getItem("fitted_user"), 10)
+            })
+                .then(() => props.history.push("/"))
+        } else {
+            addOutfit({
+                id: outfit.id,
+                styleId: parseInt((styles.Id),10),
+                userId: parseInt(localStorage.getItem("fitted_user"), 10)
+            })
+            .then(() => props.history.push("/"))
+        }
+        }
 
 
 return (
@@ -43,13 +76,35 @@ return (
                     Select Shoe
                     
                 </button>
-                <button className="accessorySelectors">Select Accessories</button>
+                <button className="accessorySelectors" onClick={() => 
+                    props.history.push("/accessoriesSelect/4")
+                }>Select Accessories</button>
             </div>
             <div className="outfitPreview">
-                <div className="topPreview">Top Selected</div>
-                <div className="bottomPreview">Bottom Selected</div>
-                <div className="shoePreview">Shoes Selected</div>
-                <div className="accesoryPreview">Accesories Selected</div>
+                <div className="topPreview">
+                    Top Selected
+                    <div className="clothing--image">
+                        <img src={props.topSelect}></img>
+                    </div>
+                </div>
+                <div className="bottomPreview">
+                    Bottom Selected
+                    <div className="clothing--image">
+                        <img src={props.bottomSelect}></img>
+                    </div>
+                </div>
+                <div className="shoePreview">
+                    Shoes Selected
+                    <div className="clothing--image">
+                        <img src={props.shoeSelect}></img>
+                    </div>
+                </div>
+                <div className="accesoryPreview">
+                    Accesories Selected
+                    <div className="clothing--image">
+                        <img src={props.accessorySelect}></img>
+                    </div>
+                </div>
             </div>
             </div>
             <div className="saveOutfitSection">
@@ -69,9 +124,11 @@ return (
                         </option>
                     ))}
                 </select>
-            <button className="saveOutfit" onClick={() => 
-                    props.history.push("/")
-                }> 
+            <button className="saveOutfit" onClick={evt => 
+                    {evt.preventDefault() 
+                    constructNewOutfit()
+                    }}
+                > 
                 Save Outfit
             </button>
             </div>

@@ -1,8 +1,11 @@
 import React, { useContext } from "react"
-import "./Tops.css"
+import "./Accessories.css"
 import { ClothingContext } from "../clothing/ClothingProvider"
 
-export default ({ clothing, history, setTopSelect }) => {
+
+
+export default ({ clothing, history, setAccessorySelect }) => {
+
     const { clothings } = useContext(ClothingContext)
 
     const activeUserClothing = (clothing, history) => {
@@ -12,9 +15,10 @@ export default ({ clothing, history, setTopSelect }) => {
         
         <div> 
           <button onClick={() => {
-              setTopSelect(clothing.itemImage)
+              setAccessorySelect(clothing.itemImage)
                    history.push(`/createOutfit`)
-                }}>Select Top</button>
+                }}>Select Accessory</button>
+        
         </div>
 
 )} else {
@@ -22,7 +26,7 @@ export default ({ clothing, history, setTopSelect }) => {
 }}
     
     return(
-    <section className="top">
+    <section className="accessory">
         <div className="clothing--image">
             <img src={require (`./${clothing.itemImage}`)}></img>
         </div>

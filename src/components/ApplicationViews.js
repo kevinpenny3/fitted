@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Route } from "react-router-dom"
 import AddItemForm from "./addItem/AddItemForm"
 import ProviderProvider from "./providerProvider/ProviderProvider"
@@ -10,11 +10,20 @@ import OutfitDash from "./outfits/OutfitDash"
 import TopSelect from "./outfitSelects/TopSelect"
 import BottomSelect from "./outfitSelects/BottomSelect"
 import ShoeSelect from "./outfitSelects/ShoeSelect"
+import AccessoriesList from "./accesories/AccessoriesList"
+import AccessorySelect from "./outfitSelects/AccessorySelect"
 
 
 
 
 export default (props) => {
+    const [topSelect, setTopSelect] = useState("")
+    const [bottomSelect, setBottomSelect] = useState("")
+    const [shoeSelect, setShoeSelect] = useState("")
+    const [accessorySelect, setAccessorySelect] = useState("")
+
+
+
     return (
         <>
             <ProviderProvider>
@@ -33,9 +42,12 @@ export default (props) => {
                 <Route exact path="/shoes/:ctId(\d+)" render={
                     props => <ShoeList {...props} />
                 } />
+                <Route exact path="/accessories/:ctId(\d+)" render={
+                    props => <AccessoriesList {...props} />
+                } />
 
                 <Route exact path="/createOutfit" render={
-                    props => <OutfitDash {...props} />
+                    props => <OutfitDash {...props} topSelect={topSelect} bottomSelect={bottomSelect} shoeSelect={shoeSelect} accessorySelect={accessorySelect}/>
                 } />
 
                 <Route exact path="/addItems" render={
@@ -47,14 +59,17 @@ export default (props) => {
                 } />
 
                 <Route exact path="/topSelect/:ctId(\d+)" render={
-                    props => <TopSelect {...props} />
+                    props => <TopSelect {...props} setTopSelect={setTopSelect}/>
                 } />
                 <Route exact path="/bottomSelect/:ctId(\d+)" render={
-                    props => <BottomSelect {...props} />
+                    props => <BottomSelect {...props} setBottomSelect={setBottomSelect}/>
                 } />
 
                 <Route exact path="/shoesSelect/:ctId(\d+)" render={
-                    props => <ShoeSelect {...props} />
+                    props => <ShoeSelect {...props} setShoeSelect={setShoeSelect} />
+                } />
+                <Route exact path="/accessoriesSelect/:ctId(\d+)" render={
+                    props => <AccessorySelect {...props} setAccessorySelect={setAccessorySelect} />
                 } />
 
             </ProviderProvider>

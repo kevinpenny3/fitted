@@ -27,7 +27,7 @@ export default (props) => {
                 <h1>My Tops</h1>
                 <article className="topsList"> {
                     userTops.map(userTop => {
-                        return <TopChoices {...props} key={userTop.id} clothing={userTop} />
+                        return <TopChoices setTopSelect={props.setTopSelect} {...props}  key={userTop.id} clothing={userTop} />
                     }
                         )
                 }

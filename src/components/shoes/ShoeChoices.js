@@ -1,9 +1,8 @@
 import React, { useContext } from "react"
 import "./Shoes.css"
-import shoe from "../shoes/shoesample.jpg"
 import { ClothingContext } from "../clothing/ClothingProvider"
 
-export default ({ clothing, history }) => {
+export default ({ clothing, history, setShoeSelect }) => {
     const { clothings } = useContext(ClothingContext)
 
     const activeUserClothing = (clothing, history) => {
@@ -13,6 +12,7 @@ export default ({ clothing, history }) => {
         
         <div> 
           <button onClick={() => {
+              setShoeSelect(clothing.itemImage)
                    history.push(`/createOutfit`)
                 }}>Select Shoes</button>
         </div>
@@ -24,7 +24,7 @@ export default ({ clothing, history }) => {
     return(
     <section className="top">
         <div className="clothing--image">
-            <img src={shoe}></img>
+            <img src={require (`./${clothing.itemImage}`)}></img>
         </div>
         <div className="clothing--color">{clothing.color}</div>
         {activeUserClothing(clothing, history)}
