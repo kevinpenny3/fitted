@@ -34,6 +34,10 @@ export default (props) => {
                     props => <AddItemForm {...props} />
                 } />
 
+                <Route path="/addItems/edit/:clothingId(\d+)" render={
+                    props => <AddItemForm {...props} />
+                } />
+
             </ProviderProvider>
 
         </>
