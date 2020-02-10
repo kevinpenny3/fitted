@@ -16,7 +16,7 @@ export default ({ clothing, history }) => {
         
         <div> 
           <button onClick={() => {
-                   history.push(`/addItem/edit/${clothing.id}`)
+                   history.push(`/addItems/edit/${clothing.id}`)
                 }}>Edit</button>
         
             <button onClick={
