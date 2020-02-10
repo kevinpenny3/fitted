@@ -12,7 +12,6 @@ export default (props) => {
     
     console.log(clothings)
     console.log(clothingTypeId)
-    debugger
    const foundShoes = clothings.filter(clothing => 
         clothingTypeId === clothing.clothingTypeId
         )
