@@ -13,7 +13,7 @@ export const ClothingProvider = (props) => {
     const [clothings, setClothings] = useState([])
 
     const getClothings = () => {
-        return fetch("http://localhost:8088/clothing")
+        return fetch("http://localhost:8088/clothing?_expand=clothingType")
             .then(res => res.json())
             .then(setClothings)
     }
@@ -47,10 +47,7 @@ export const ClothingProvider = (props) => {
             .then(getClothings)
     }
 
-    /*
-        Load all animals when the component is mounted. Ensure that
-        an empty array is the second argument to avoid infinite loop.
-    */
+    
     useEffect(() => {
         getClothings()
     }, [])

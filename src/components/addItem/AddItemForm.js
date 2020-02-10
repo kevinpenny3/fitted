@@ -42,7 +42,7 @@ export default props => {
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
-                .then(() => props.history.push("/"))
+                .then(() => props.history.push(`/${clothing.clothingType.type}s/${clothing.clothingTypeId}`))
         } else {
             addClothing({
                 clothingTypeId: parseInt((clothing.clothingTypeId),10),

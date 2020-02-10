@@ -6,6 +6,7 @@ import Dashboard from "./dashboard/Dashboard"
 import TopList from "./tops/TopList"
 import BottomList from "./bottoms/BottomList"
 import ShoeList from "./shoes/ShoeList"
+import OutfitDash from "./outfits/OutfitDash"
 
 
 
@@ -28,6 +29,10 @@ export default (props) => {
 
                 <Route exact path="/shoes/:ctId(\d+)" render={
                     props => <ShoeList {...props} />
+                } />
+
+                <Route exact path="/createOutfit" render={
+                    props => <OutfitDash {...props} />
                 } />
 
                 <Route exact path="/addItems" render={
