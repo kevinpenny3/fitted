@@ -38,14 +38,14 @@ export default props => {
         if (editMode) {
             updateClothing({
                 id: clothing.id,
-                clothingTypeId: parseInt((clothing.clothingType),10),
+                clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
                 .then(() => props.history.push("/"))
         } else {
             addClothing({
-                clothingTypeId: parseInt((clothing.clothingType),10),
+                clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
