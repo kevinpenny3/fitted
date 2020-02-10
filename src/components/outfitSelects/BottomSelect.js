@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
-import Accessories from "./Accessories"
-import "./Accessories.css"
+import "../bottoms/Bottoms.css"
 import { ClothingContext } from "../clothing/ClothingProvider"
 import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
+import BottomChoices from "../bottoms/BottomChoices"
 
 
 export default (props) => {
@@ -13,21 +13,21 @@ export default (props) => {
     console.log(clothings)
     console.log(clothingTypeId)
 
-   const foundAccessories = clothings.filter(clothing => 
+   const foundBottoms = clothings.filter(clothing => 
         clothingTypeId === clothing.clothingTypeId
         )
-        console.log(foundAccessories)
+        console.log(foundBottoms)
 
-        const userAccessories = foundAccessories.filter(clothing =>
+        const userBottoms = foundBottoms.filter(clothing =>
             clothing.userId === parseInt(localStorage.getItem("fitted_user"), 10))
-            console.log("found user accessories", userAccessories)
+            console.log("found user bottoms", userBottoms)
 
         return(
-            <div className="accessories">
-                <h1>My Accessories</h1>
-                <article className="accessoriesList"> {
-                    userAccessories.map(userAccessories => {
-                        return <Accessories {...props} key={userAccessories.id} clothing={userAccessories} />
+            <div className="bottoms">
+                <h1>My Bottoms</h1>
+                <article className="bottomsList"> {
+                    userBottoms.map(userBottom => {
+                        return <BottomChoices setBottomSelect={props.setBottomSelect} {...props} key={userBottom.id} clothing={userBottom} />
                     }
                         )
                 }

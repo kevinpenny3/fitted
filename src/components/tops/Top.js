@@ -1,6 +1,5 @@
 import React, { useContext } from "react"
 import "./Tops.css"
-import top from "./topsample.jpg"
 import { ClothingContext } from "../clothing/ClothingProvider"
 
 export default ({ clothing, history }) => {
@@ -37,7 +36,7 @@ export default ({ clothing, history }) => {
     return(
     <section className="top">
         <div className="clothing--image">
-            <img src={top}></img>
+            <img src={require (`./${clothing.itemImage}`)}></img>
         </div>
         <div className="clothing--color">{clothing.color}</div>
         {activeUserClothing(clothing, history)}

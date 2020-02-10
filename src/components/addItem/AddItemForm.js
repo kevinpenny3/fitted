@@ -40,14 +40,16 @@ export default props => {
                 id: clothing.id,
                 clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
-                userId: parseInt(localStorage.getItem("fitted_user"), 10)
+                userId: parseInt(localStorage.getItem("fitted_user"), 10),
+                itemImage: clothing.itemImage
             })
                 .then(() => props.history.push(`/${clothing.clothingType.type}s/${clothing.clothingTypeId}`))
         } else {
             addClothing({
                 clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
-                userId: parseInt(localStorage.getItem("fitted_user"), 10)
+                userId: parseInt(localStorage.getItem("fitted_user"), 10),
+                itemImage: clothing.itemImage
             })
             .then(() => props.history.push("/"))
         }
@@ -64,9 +66,9 @@ export default props => {
                 <label htmlFor="addPhoto">Add Photo</label>
                 <input
                     type="file"
-                    id="image"
-                    name="image"
-                    defaultValue=""
+                    id="itemImage"
+                    name="itemImage"
+                    defaultValue={clothing.itemImage}
                     // required
                     autoFocus
                     className="fileUpload"

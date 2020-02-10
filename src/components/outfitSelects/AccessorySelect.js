@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
-import Accessories from "./Accessories"
-import "./Accessories.css"
+import "../accesories/Accessories.css"
 import { ClothingContext } from "../clothing/ClothingProvider"
 import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
+import AccessoryChoice from "../accesories/AccessoryChoice"
 
 
 export default (props) => {
@@ -18,16 +18,16 @@ export default (props) => {
         )
         console.log(foundAccessories)
 
-        const userAccessories = foundAccessories.filter(clothing =>
-            clothing.userId === parseInt(localStorage.getItem("fitted_user"), 10))
-            console.log("found user accessories", userAccessories)
+    const userAccessories = foundAccessories.filter(clothing =>
+        clothing.userId === parseInt(localStorage.getItem("fitted_user"), 10))
+        console.log("found user accessories", userAccessories)
 
         return(
-            <div className="accessories">
-                <h1>My Accessories</h1>
+            <div className="tops">
+                <h1>My Tops</h1>
                 <article className="accessoriesList"> {
                     userAccessories.map(userAccessories => {
-                        return <Accessories {...props} key={userAccessories.id} clothing={userAccessories} />
+                        return <AccessoryChoice setAccessorySelect={props.setAccessorySelect} {...props} key={userAccessories.id} clothing={userAccessories} />
                     }
                         )
                 }
