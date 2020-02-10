@@ -28,17 +28,17 @@ return (
             <div className="outfitSelectorList">
             <div className="clothingTypeSelectors">
                 <button className="topSelector" onClick={() => 
-                    props.history.push("/tops/1")
+                    props.history.push("/topSelect/1")
                 }>
                     Select Top
                 </button>
                 <button className="bottomSelector" onClick={() => 
-                    props.history.push("/bottoms/2")
+                    props.history.push("/bottomSelect/2")
                 }>
                     Select Bottom
                 </button>
                 <button className="shoeSelector" onClick={() => 
-                    props.history.push("/shoes/3")
+                    props.history.push("/shoesSelect/3")
                 }>
                     Select Shoe
                     
