@@ -12,7 +12,11 @@ export default ({ clothing, history, setTopSelect }) => {
         
         <div> 
           <button onClick={() => {
-              setTopSelect(clothing.itemImage)
+              setTopSelect(
+                  { image: clothing.itemImage,
+                    topId: clothing.id 
+                    }
+                  )
                    history.push(`/createOutfit`)
                 }}>Select Top</button>
         </div>

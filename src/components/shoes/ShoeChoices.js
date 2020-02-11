@@ -12,7 +12,10 @@ export default ({ clothing, history, setShoeSelect }) => {
         
         <div> 
           <button onClick={() => {
-              setShoeSelect(clothing.itemImage)
+              setShoeSelect({ 
+                  image: clothing.itemImage,
+                  shoeId: clothing.id 
+                })
                    history.push(`/createOutfit`)
                 }}>Select Shoes</button>
         </div>

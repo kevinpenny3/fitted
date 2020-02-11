@@ -16,7 +16,10 @@ export default ({ clothing, history, setAccessorySelect }) => {
         
         <div> 
           <button onClick={() => {
-              setAccessorySelect(clothing.itemImage)
+              setAccessorySelect({ 
+                  image: clothing.itemImage,
+                  accessoryId: clothing.id 
+                })
                    history.push(`/createOutfit`)
                 }}>Select Accessory</button>
         
