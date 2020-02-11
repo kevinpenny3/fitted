@@ -23,22 +23,25 @@
     justify-content: center;
 }
 
-.topPreview,
-.bottomPreview,
-.shoePreview,
-.accesoryPreview {
-    text-align: center;
-    flex-basis: 23%;
-    border: 1px solid black;
-    margin: 1rem;
-    height: 500px;
-}
-
 .saveOutfitSection {
-    display: flex;
     margin: 1px;
 }
 
-.saveOutfit {
-    margin-right: 3rem;
+.saveOutfit button {
+    padding: 2px;
+    background-color: #8bcfb1;
 }
+
+.clothing--image img{
+    border-style: none;
+}
+
+.clothing--image {
+    text-align: center;
+    flex-basis: 23%;
+    background-color: white;
+    border-radius: .3rem;
+    margin: 1rem;
+    height: 21rem;
+}
+

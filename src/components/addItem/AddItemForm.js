@@ -92,16 +92,18 @@ export default props => {
     return (
         <main className="container--addItem">
         <form className="clothingForm">
-            <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "Add Item"}</h2>
+            <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "Add New Item"}</h2>
 
-            <div className="form-group">
-                <label htmlFor="addPhoto">Add Photo</label>
+            <div className="form-group imageUpload">
+                <label class="custom-file-upload"> Upload Photo
                 <input
                     type="file"
                     name="file"
                     placeholder="upload an image"
+                    className="form-control"
                     onChange={uploadImage}
                     />
+                </label>
                 {loading ? (
                     <h3>Loading...</h3>
                 ): (
@@ -111,7 +113,7 @@ export default props => {
             <fieldset>
 
             <div className="form-group">
-                <label htmlFor="title">Type</label>
+                <label htmlFor="title">Item Type</label>
                 <select
                     // type="select"
                     id="clothingTypeId"

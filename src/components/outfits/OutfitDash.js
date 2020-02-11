@@ -88,49 +88,54 @@ return (
         <section>
             <div className="outfitSelectorList">
             <div className="clothingTypeSelectors">
+            </div>
+            <div className="outfitPreview">
+                <div className="topPreviewSection">
+                <div className="clothingTypeSelectors">
+
                 <button className="topSelector" onClick={() => 
                     props.history.push("/topSelect/1")
                 }>
                     Select Top
                 </button>
-                <button className="bottomSelector" onClick={() => 
-                    props.history.push("/bottomSelect/2")
-                }>
+                </div>
+                    <div className="clothing--image">
+                        <img src={(props.topSelect.image)}/>
+                    </div>
+                </div>
+                <div className="bottomPreview">
+                <div className="clothingTypeSelectors">
+                    <button className="bottomSelector" onClick={() => 
+                        props.history.push("/bottomSelect/2")
+                        }>
                     Select Bottom
-                </button>
+                    </button>
+                </div>
+                    <div className="clothing--image">
+                        <img src={(props.bottomSelect.image)}/>
+                    </div>
+                </div>
+                <div className="shoePreview">
+                <div className="clothingTypeSelectors">
                 <button className="shoeSelector" onClick={() => 
                     props.history.push("/shoesSelect/3")
                 }>
                     Select Shoe
                     
                 </button>
-                <button className="accessorySelectors" onClick={() => 
-                    props.history.push("/accessoriesSelect/4")
-                }>Select Accessories</button>
-            </div>
-            <div className="outfitPreview">
-                <div className="topPreview">
-                    Top Selected
-                    <div className="clothing--image">
-                        <img src={(props.topSelect.image)}/>
-                    </div>
                 </div>
-                <div className="bottomPreview">
-                    Bottom Selected
                     <div className="clothing--image">
-                        <img src={(props.bottomSelect.image)}></img>
-                    </div>
-                </div>
-                <div className="shoePreview">
-                    Shoes Selected
-                    <div className="clothing--image">
-                        <img src={(props.shoeSelect.image)}></img>
+                        <img src={(props.shoeSelect.image)}/>
                     </div>
                 </div>
                 <div className="accesoryPreview">
-                    Accesories Selected
+                <div className="clothingTypeSelectors">
+                <button className="accessorySelectors" onClick={() => 
+                    props.history.push("/accessoriesSelect/4")
+                }>Select Accessories</button>
+                </div>
                     <div className="clothing--image">
-                        <img src={(props.accessorySelect.image)}></img>
+                        <img src={(props.accessorySelect.image)}/>
                     </div>
                 </div>
             </div>
@@ -152,7 +157,7 @@ return (
                         </option>
                     ))}
                 </select>
-            <button className="saveOutfit" onClick={evt => 
+            <button className="saveOutfit form-control" onClick={evt => 
                     {evt.preventDefault() 
                     constructNewOutfit()
                     }}
