@@ -40,4 +40,10 @@
     margin-right: auto;
 }
 
+.form-group img {
+    width: 300px;
+    height: 300px;
+    padding: 1rem;
+}
+
 

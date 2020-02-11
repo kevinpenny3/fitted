@@ -38,7 +38,7 @@ export default ({ clothing, history }) => {
     return(
     <section className="accessory">
         <div className="clothing--image">
-            <img src={require (`./${clothing.itemImage}`)}></img>
+            <img src={(clothing.itemImage)}></img>
         </div>
         <div className="clothing--color">{clothing.color}</div>
         {activeUserClothing(clothing, history)}
