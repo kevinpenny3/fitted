@@ -112,25 +112,25 @@ return (
                 <div className="topPreview">
                     Top Selected
                     <div className="clothing--image">
-                        <img src={props.topSelect}/>
+                        <img src={(props.topSelect.image)}/>
                     </div>
                 </div>
                 <div className="bottomPreview">
                     Bottom Selected
                     <div className="clothing--image">
-                        <img src={props.bottomSelect}></img>
+                        <img src={(props.bottomSelect.image)}></img>
                     </div>
                 </div>
                 <div className="shoePreview">
                     Shoes Selected
                     <div className="clothing--image">
-                        <img src={props.shoeSelect}></img>
+                        <img src={(props.shoeSelect.image)}></img>
                     </div>
                 </div>
                 <div className="accesoryPreview">
                     Accesories Selected
                     <div className="clothing--image">
-                        <img src={props.accessorySelect}></img>
+                        <img src={(props.accessorySelect.image)}></img>
                     </div>
                 </div>
             </div>
