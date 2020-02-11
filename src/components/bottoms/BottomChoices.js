@@ -15,7 +15,10 @@ export default ({ clothing, history, setBottomSelect }) => {
         
         <div> 
           <button onClick={() => {
-              setBottomSelect(clothing.itemImage)
+              setBottomSelect({ 
+                  image: clothing.itemImage,
+                  bottomId: clothing.id 
+                })
                    history.push(`/createOutfit`)
                 }}>Select Bottom</button>
         

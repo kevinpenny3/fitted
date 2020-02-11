@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react"
 import "./OutfitDash.css"
 import { StyleContext } from "../styles/StyleProvider"
 import { OutfitContext } from "./OutfitProvider"
+import { ClothingOutfitContext } from "./ClothingOutfitProvider"
 
 
 
@@ -11,17 +12,21 @@ const OutfitDash = props => {
 
     const { styles } = useContext(StyleContext)
     const { outfits, addOutfit, updateOutfit } = useContext(OutfitContext)
+    const { addClothingOutfit, updateClothingOutfit } = useContext(ClothingOutfitContext)
     const [outfit, setOutfits] = useState({})
     const editMode = props.match.params.hasOwnProperty("outfitId")
 
     console.log(props.topSelect)
+    console.log(props.bottomSelect)
+    console.log(props.shoeSelect)
+    console.log(props.accessorySelect)
     const handleControlledInputChange = (evt) => {
         /*
             When changing a state object or array, always create a new one
             and change state instead of modifying current one
         */
         const newOutfit = Object.assign({}, outfit)
-        newOutfit[evt.target.name] = evt.target.value
+        newOutfit[evt.target.name] = evt.target.value 
         console.log(newOutfit)
         setOutfits(newOutfit)
     }
@@ -37,19 +42,42 @@ const OutfitDash = props => {
     }
 
     const constructNewOutfit = () => {
+    
         if (editMode) {
             updateOutfit({
                 id: outfit.id,
-                styleId: parseInt((styles.id),10),
+                styleId: parseInt((outfit.styleId),10),
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
                 .then(() => props.history.push("/"))
         } else {
             addOutfit({
                 id: outfit.id,
-                styleId: parseInt((styles.id),10),
+                styleId: parseInt((outfit.styleId),10),
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
+            .then((res) => {
+                let neededId = res.id
+                return neededId})
+            .then( (res) =>
+             {   addClothingOutfit({
+                outfitId: res,
+                clothingId: props.topSelect.topId}
+                )
+               addClothingOutfit({
+                outfitId: res,
+                clothingId: props.bottomSelect.bottomId}
+                )
+               addClothingOutfit({
+                outfitId: res,
+                clothingId: props.shoeSelect.shoeId}
+                )
+               addClothingOutfit({
+                outfitId: res,
+                clothingId: props.accessorySelect.accessoryId}
+                )
+            })
+        
             .then(() => props.history.push("/"))
         }
         }

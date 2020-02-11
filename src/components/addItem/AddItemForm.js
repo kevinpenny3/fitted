@@ -2,16 +2,12 @@ import React, { useContext, useState, useEffect } from "react"
 import "./AddItem.css"
 import { ClothingContext } from "../clothing/ClothingProvider"
 import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
-import FileUploader from "react-firebase-file-uploader";
-import "firebase/storage";
-import * as firebase from "firebase/app";
 
 export default props => {
     const { clothings, addClothing, updateClothing } = useContext(ClothingContext)
     const [clothing, setClothing] = useState({})
     const { clothingTypes } = useContext(ClothingTypeContext)
     const editMode = props.match.params.hasOwnProperty("clothingId")
-    const [URL, setURL] = useState("");
 
     const handleControlledInputChange = (evt) => {
         /*
@@ -23,26 +19,6 @@ export default props => {
         console.log(newClothing)
         setClothing(newClothing)
     }
-
-
-    const photoUploader = filename => {
-        console.log("filename", filename);
-        firebase
-          .storage()
-          .ref("ItemPhotos")
-          .child(filename)
-          .getDownloadURL()
-            .then(firebaseUrl => {
-              setURL(firebaseUrl)
-            //   addPhoto({
-            //     userId: parseInt(localStorage.getItem("fitted_user")),
-            //     photoURL: firebaseUrl
-            //   })
-            })
-      };
-
-
-
 
     const setDefaults = () => {
         if (editMode) {
@@ -73,7 +49,7 @@ export default props => {
                 clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10),
-                itemImage: {URL}
+                itemImage: clothing.itemImage
             })
             .then(() => props.history.push("/"))
         }
@@ -87,15 +63,19 @@ export default props => {
             <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "Add Item"}</h2>
 
             <div className="form-group">
-                <label><img src={URL} /></label>
-                <FileUploader
-                    accept="image/*"
+                <label htmlFor="addPhoto">Add Photo</label>
+                <input
+                    type="file"
                     id="itemImage"
                     name="itemImage"
-                    filename={file => file.name.split(".")[0]}
-                    storageRef={firebase.storage().ref("ItemPhotos")}
-                    onUploadSuccess={photoUploader}
-            />
+                    defaultValue={clothing.itemImage}
+                    // required
+                    autoFocus
+                    className="fileUpload"
+                    placeholder="image"
+                    // proptype="intlin"
+                    onChange={handleControlledInputChange}
+                    />
             </div>
             <fieldset>
 
