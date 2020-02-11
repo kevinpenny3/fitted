@@ -4,6 +4,7 @@ import { ClothingContext } from "../clothing/ClothingProvider"
 
 
 
+
 export default ({ clothing, history, setAccessorySelect }) => {
 
     const { clothings } = useContext(ClothingContext)
