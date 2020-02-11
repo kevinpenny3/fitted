@@ -40,14 +40,14 @@ const OutfitDash = props => {
         if (editMode) {
             updateOutfit({
                 id: outfit.id,
-                styleId: parseInt((styles.Id),10),
+                styleId: parseInt((styles.id),10),
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
                 .then(() => props.history.push("/"))
         } else {
             addOutfit({
                 id: outfit.id,
-                styleId: parseInt((styles.Id),10),
+                styleId: parseInt((styles.id),10),
                 userId: parseInt(localStorage.getItem("fitted_user"), 10)
             })
             .then(() => props.history.push("/"))
@@ -84,7 +84,7 @@ return (
                 <div className="topPreview">
                     Top Selected
                     <div className="clothing--image">
-                        <img src={props.topSelect}></img>
+                        <img src={props.topSelect}/>
                     </div>
                 </div>
                 <div className="bottomPreview">
@@ -111,7 +111,7 @@ return (
                 <select
                     id="styleId"
                     name="styleId"
-                    value = {styles.styleId}
+                    value = {styles.id}
                     required
                     autoFocus
                     className="form-control"
