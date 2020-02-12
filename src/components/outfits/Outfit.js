@@ -16,43 +16,83 @@ export default ({ clothing, outfit, history }) => {
     })
     console.log(clothingOutfitTarget, "clothing target")
 
-    
-    return(
-    <section className="outfit">
-        <div className="outfit--images">
-            { clothingOutfitTarget.map(cot => {
-                return <img src={(cot.clothing.itemImage)}/>
-            })}
-        </div>
-        <div className="outfitControls">
-            <div className="wearButton">
-        <button 
-          onClick={() => {
-                   history.push("/")
-                }}
-                >
-                    Wear It!</button>
-        </div>
-        <div className="functionButtons">
-        <button 
-          onClick={() => {
-                   history.push("/outfits/")
-                }}
-                >
-                    Edit</button>
-            <button 
-                onClick={
-                () => {
-                    deleteOutfit(outfit)
-                    .then(() => {
-                        history.push("/outfits")            
-                    })
-                }}
-                >
-            Delete clothing
-            </button>
-            </div>
-            </div>
-    </section>
-)
-        }
+
+    if (outfit.fullFitPic !== "") {
+
+        return (
+            <section className="outfit">
+                <div className="fullFitPic">
+                    <img src={(outfit.fullFitPic)}/>
+                </div>
+                <div className="outfitControls">
+                    <div className="wearButton">
+                        <button 
+                            onClick={() => {
+                                history.push("/")
+                                    }}
+                        >
+                        Wear It!</button>
+                    </div>
+                    <div className="functionButtons">
+                        <button 
+                            onClick={() => {
+                                history.push("/outfits/")
+                                    }}
+                        >
+                         Edit</button>
+                        <button 
+                            onClick={() => {
+                                deleteOutfit(outfit)
+                                .then(() => {
+                                history.push("/outfits")            
+                                    })
+                                }}
+                        >
+                         Delete clothing
+                        </button>
+                     </div>
+                 </div>
+                </section>
+                )}else {
+
+                    return(
+                    <section className="outfit">
+                        <div className="outfit--images">
+                            { clothingOutfitTarget.map(cot => {
+                                return <img src={(cot.clothing.itemImage)}/>
+                            })}
+                        </div>
+                        <div className="outfitControls">
+                            <div className="wearButton">
+                        <button 
+                          onClick={() => {
+                                   history.push("/")
+                                }}
+                                >
+                                    Wear It!</button>
+                        </div>
+                        <div className="functionButtons">
+                        <button 
+                          onClick={() => {
+                                   history.push("/outfits/")
+                                }}
+                                >
+                                    Edit</button>
+                            <button 
+                                onClick={
+                                () => {
+                                    deleteOutfit(outfit)
+                                    .then(() => {
+                                        history.push("/outfits")            
+                                    })
+                                }}
+                                >
+                            Delete clothing
+                            </button>
+                            </div>
+                            </div>
+                    </section>
+                )
+                }
+    }
+
