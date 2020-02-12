@@ -20,7 +20,7 @@ export default (props) => {
                 <Link className="navbar__link" to="/createOutfit">Create Fit</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/find">Find Fit</Link>
+                <Link className="navbar__link" to="/outfits">Find Fit</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/closet">View Closet</Link>

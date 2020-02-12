@@ -1,0 +1,32 @@
+.outfit {
+    width: 23rem;
+    height: 25rem;
+    background-color: white;
+    margin: 1rem;
+}
+
+.outfit--images img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.outfit--images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.outfitList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.outfitControls {
+    display: flex;
+    justify-content: center;
+}
+.outfitControls button {
+    margin-left: .3rem;
+    margin-top: .4rem;
+}

@@ -12,6 +12,7 @@ import BottomSelect from "./outfitSelects/BottomSelect"
 import ShoeSelect from "./outfitSelects/ShoeSelect"
 import AccessoriesList from "./accesories/AccessoriesList"
 import AccessorySelect from "./outfitSelects/AccessorySelect"
+import OutfitList from "./outfits/OutfitList"
 
 
 
@@ -47,7 +48,7 @@ export default (props) => {
                 } />
 
                 <Route exact path="/createOutfit" render={
-                    props => <OutfitDash {...props} topSelect={topSelect} bottomSelect={bottomSelect} shoeSelect={shoeSelect} accessorySelect={accessorySelect}/>
+                    props => <OutfitDash {...props} topSelect={topSelect} setTopSelect={setTopSelect} bottomSelect={bottomSelect} setBottomSelect={setBottomSelect} shoeSelect={shoeSelect} setShoeSelect={setShoeSelect} accessorySelect={accessorySelect} setAccessorySelect={setAccessorySelect} />
                 } />
 
                 <Route exact path="/addItems" render={
@@ -59,10 +60,10 @@ export default (props) => {
                 } />
 
                 <Route exact path="/topSelect/:ctId(\d+)" render={
-                    props => <TopSelect {...props} setTopSelect={setTopSelect}/>
+                    props => <TopSelect {...props} setTopSelect={setTopSelect} />
                 } />
                 <Route exact path="/bottomSelect/:ctId(\d+)" render={
-                    props => <BottomSelect {...props} setBottomSelect={setBottomSelect}/>
+                    props => <BottomSelect {...props} setBottomSelect={setBottomSelect} />
                 } />
 
                 <Route exact path="/shoesSelect/:ctId(\d+)" render={
@@ -70,6 +71,10 @@ export default (props) => {
                 } />
                 <Route exact path="/accessoriesSelect/:ctId(\d+)" render={
                     props => <AccessorySelect {...props} setAccessorySelect={setAccessorySelect} />
+                } />
+
+                <Route exact path="/outfits" render={
+                    props => <OutfitList {...props} />
                 } />
 
             </ProviderProvider>

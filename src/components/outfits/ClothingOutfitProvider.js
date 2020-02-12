@@ -13,7 +13,7 @@ export const ClothingOutfitProvider = (props) => {
     const [clothingOutfits, setClothingOutfits] = useState([])
 
     const getClothingOutfits = () => {
-        return fetch("http://localhost:8088/clothingOutfits")
+        return fetch("http://localhost:8088/clothingOutfits?_expand=clothing")
             .then(res => res.json())
             .then(setClothingOutfits)
     }
