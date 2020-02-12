@@ -88,6 +88,9 @@ export default (props) => {
                 <Route exact path="/outfits/dress" render={
                     props => <DressFilter {...props} />
                 } />
+                <Route exact path="/outfits/:clothingId(\d+)" render={
+                    props => <OutfitList {...props} />
+                } />
 
             </ProviderProvider>
 

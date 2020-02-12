@@ -77,7 +77,7 @@ select {
     margin-bottom: 1rem;
 }
 
-.form-group img {
+.itemImagePreview {
     width: 20rem;
     height: 20rem;
     padding: 1rem;

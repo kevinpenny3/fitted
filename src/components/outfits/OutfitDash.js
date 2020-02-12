@@ -16,10 +16,32 @@ const OutfitDash = props => {
     const [outfit, setOutfits] = useState({})
     const editMode = props.match.params.hasOwnProperty("outfitId")
 
-    console.log(props.topSelect)
-    console.log(props.bottomSelect)
-    console.log(props.shoeSelect)
-    console.log(props.accessorySelect)
+    
+
+    const [ fullPicimage, setFullPicImage] = useState('')
+    const [ loading, setLoading] = useState(false)
+
+    const uploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'fitted')
+        setLoading(true)
+        const res = await fetch(
+           ' https://api.cloudinary.com/v1_1/kmpcldnry/image/upload ', 
+           {
+               method: 'POST', 
+               body: data
+           }
+        )
+        const file = await res.json()
+
+        setFullPicImage(file.secure_url)
+        setLoading(false)
+    }
+
+
+
     const handleControlledInputChange = (evt) => {
         /*
             When changing a state object or array, always create a new one
@@ -47,14 +69,16 @@ const OutfitDash = props => {
             updateOutfit({
                 id: outfit.id,
                 styleId: parseInt((outfit.styleId),10),
-                userId: parseInt(localStorage.getItem("fitted_user"), 10)
+                userId: parseInt(localStorage.getItem("fitted_user"), 10),
+                fullFitPic: fullPicimage
             })
                 .then(() => props.history.push("/"))
         } else {
             addOutfit({
                 id: outfit.id,
                 styleId: parseInt((outfit.styleId),10),
-                userId: parseInt(localStorage.getItem("fitted_user"), 10)
+                userId: parseInt(localStorage.getItem("fitted_user"), 10),
+                fullFitPic: fullPicimage
             })
             .then((res) => {
                 let neededId = res.id
@@ -148,6 +172,18 @@ return (
             </div>
             </div>
             <div className="saveOutfitSection">
+                <div className="inputSection">
+            <div className="form-group imageUpload">
+                <label class="custom-file-upload"> Upload Photo
+                <input
+                    type="file"
+                    name="file"
+                    placeholder="upload an image"
+                    className="form-control"
+                    onChange={uploadImage}
+                    />
+                </label>
+            </div>
                 <select
                     id="styleId"
                     name="styleId"
@@ -164,6 +200,7 @@ return (
                         </option>
                     ))}
                 </select>
+                
             <button className="saveOutfit form-control" onClick={evt => 
                     {evt.preventDefault() 
                     constructNewOutfit()
@@ -171,6 +208,14 @@ return (
                 > 
                 Save Outfit
             </button>
+            </div>
+            <div className="previewFitPic">
+            {loading ? (
+                    <h3>Loading...</h3>
+                ): (
+                    <img className="fullFitPreview" src={fullPicimage}/>
+                )}
+            </div>
             </div>
         </section>
     </main>

@@ -98,7 +98,7 @@ export default props => {
                 {loading ? (
                     <h3>Loading...</h3>
                 ): (
-                    <img src={image}/>
+                    <img className="itemImagePreview" src={image}/>
                 )}
             </div>
             <fieldset>
