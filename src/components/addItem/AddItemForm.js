@@ -32,15 +32,6 @@ export default props => {
     }
 
 
-
-
-
-
-
-
-
-
-
     const handleControlledInputChange = (evt) => {
         /*
             When changing a state object or array, always create a new one

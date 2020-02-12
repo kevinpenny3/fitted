@@ -1,6 +1,6 @@
 .outfit {
     width: 23rem;
-    height: 25rem;
+    height: 27rem;
     background-color: white;
     margin: 1rem;
 }
@@ -24,9 +24,30 @@
 
 .outfitControls {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .outfitControls button {
-    margin-left: .3rem;
     margin-top: .4rem;
 }
+
+.wearButton {
+    display: flex;
+    justify-content: center;
+}
+
+.wearButton button{
+    width: 20.75rem;
+    height: 2rem;
+}
+
+.functionButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.functionButtons button {
+    width: 10.15rem;
+    margin: .25rem;
+}
+

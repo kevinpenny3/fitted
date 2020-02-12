@@ -25,9 +25,18 @@ export default ({ clothing, outfit, history }) => {
             })}
         </div>
         <div className="outfitControls">
+            <div className="wearButton">
         <button 
           onClick={() => {
-                   history.push("/outfits")
+                   history.push("/")
+                }}
+                >
+                    Wear It!</button>
+        </div>
+        <div className="functionButtons">
+        <button 
+          onClick={() => {
+                   history.push("/outfits/")
                 }}
                 >
                     Edit</button>
@@ -42,6 +51,7 @@ export default ({ clothing, outfit, history }) => {
                 >
             Delete clothing
             </button>
+            </div>
             </div>
     </section>
 )
