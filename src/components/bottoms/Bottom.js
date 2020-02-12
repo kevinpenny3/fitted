@@ -38,7 +38,7 @@ export default ({ clothing, history }) => {
     return(
     <section className="bottom">
         <div className="clothing--image">
-            <img src={(clothing.image)}></img>
+            <img src={(clothing.itemImage)}></img>
         </div>
         <div className="clothing--color">{clothing.color}</div>
         {activeUserClothing(clothing, history)}

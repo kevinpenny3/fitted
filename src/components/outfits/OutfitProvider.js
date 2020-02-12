@@ -42,7 +42,7 @@ export const OutfitProvider = (props) => {
     }
 
     const deleteOutfit = outfit => {
-        return fetch(`http://localhost:8088/outfits/${outfits.id}`, {
+        return fetch(`http://localhost:8088/outfits/${outfit.id}`, {
             method: "DELETE",
         })
             .then(getOutfits)
@@ -59,7 +59,7 @@ export const OutfitProvider = (props) => {
 
     return (
         <OutfitContext.Provider value={{
-            outfits, addOutfit, updateOutfit, deleteOutfit
+            outfits, addOutfit, updateOutfit, deleteOutfit, getOutfits
         }}>
             {props.children}
         </OutfitContext.Provider>

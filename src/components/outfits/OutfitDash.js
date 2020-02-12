@@ -11,7 +11,7 @@ const OutfitDash = props => {
     
 
     const { styles } = useContext(StyleContext)
-    const { outfits, addOutfit, updateOutfit } = useContext(OutfitContext)
+    const { outfits, getOutfits, addOutfit, updateOutfit } = useContext(OutfitContext)
     const { addClothingOutfit, updateClothingOutfit } = useContext(ClothingOutfitContext)
     const [outfit, setOutfits] = useState({})
     const editMode = props.match.params.hasOwnProperty("outfitId")
@@ -78,7 +78,14 @@ const OutfitDash = props => {
                 )
             })
         
-            .then(() => props.history.push("/"))
+            .then(getOutfits).then(
+                () => {
+                    props.setTopSelect("")
+                    props.setBottomSelect("")
+                    props.setShoeSelect("")
+                    props.setAccessorySelect("")
+                }).then(
+                () => props.history.push("/"))
         }
         }
 
