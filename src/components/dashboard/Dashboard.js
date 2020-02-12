@@ -31,9 +31,21 @@ return (
                 }>Accessories Filter</button>
             </div>
             <div className="styleFilters">
-                <button className="casualFilter">Casual</button>
-                <button className="bizCasualFilter">Business Casual</button>
-                <button className="dressFilter">Dress</button>
+                <button className="casualFilter" onClick={() => 
+                    props.history.push("/outfits/casual")
+                }
+                
+                >Casual</button>
+                <button className="bizCasualFilter" onClick={() => 
+                    props.history.push("/outfits/businessCasual")
+                }
+                
+                >Business Casual</button>
+                <button className="dressFilter" onClick={() => 
+                    props.history.push("/outfits/dress")
+                }
+                
+                >Dress</button>
             </div>
             </div>
         </section>

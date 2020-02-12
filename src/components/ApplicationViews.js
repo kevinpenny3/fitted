@@ -13,6 +13,9 @@ import ShoeSelect from "./outfitSelects/ShoeSelect"
 import AccessoriesList from "./accesories/AccessoriesList"
 import AccessorySelect from "./outfitSelects/AccessorySelect"
 import OutfitList from "./outfits/OutfitList"
+import CasualFilter from "./styles/CasualFilter"
+import BizCasualFilter from "./styles/BizCasualFilter"
+import DressFilter from "./styles/DressFilter"
 
 
 
@@ -75,6 +78,15 @@ export default (props) => {
 
                 <Route exact path="/outfits" render={
                     props => <OutfitList {...props} />
+                } />
+                <Route exact path="/outfits/casual" render={
+                    props => <CasualFilter {...props} />
+                } />
+                <Route exact path="/outfits/businessCasual" render={
+                    props => <BizCasualFilter {...props} />
+                } />
+                <Route exact path="/outfits/dress" render={
+                    props => <DressFilter {...props} />
                 } />
 
             </ProviderProvider>
