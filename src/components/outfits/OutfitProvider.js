@@ -31,8 +31,19 @@ export const OutfitProvider = (props) => {
     }
 
     const updateOutfit= outfit => {
-        return fetch(`http://localhost:8088/outfits/${outfits.id}`, {
+        return fetch(`http://localhost:8088/outfits/${outfit.id}`, {
             method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(outfit)
+        })
+            .then(getOutfits)
+    }
+
+    const patchOutfit= outfit => {
+        return fetch(`http://localhost:8088/outfits/${outfit.id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -59,7 +70,7 @@ export const OutfitProvider = (props) => {
 
     return (
         <OutfitContext.Provider value={{
-            outfits, addOutfit, updateOutfit, deleteOutfit, getOutfits
+            outfits, addOutfit, updateOutfit, deleteOutfit, getOutfits, patchOutfit
         }}>
             {props.children}
         </OutfitContext.Provider>

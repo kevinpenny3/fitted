@@ -64,7 +64,7 @@ export default props => {
                 clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10),
-                itemImage: image
+                itemImage: clothing.itemImage
             })
                 .then(() => props.history.push(`/${clothing.clothingType.type}s/${clothing.clothingTypeId}`))
         } else {
@@ -85,21 +85,24 @@ export default props => {
         <form className="clothingForm">
             <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "Add New Item"}</h2>
 
-            <div className="form-group imageUpload">
+            <div className=" imageUpload">
+
+
                 <label class="custom-file-upload"> Upload Photo
                 <input
                     type="file"
-                    name="file"
+                    name="itemImage"
                     placeholder="upload an image"
+                    value = {image}
                     className="form-control"
-                    onChange={uploadImage}
+                    onChange={editMode ? handleControlledInputChange : uploadImage}
                     />
                 </label>
-                {loading ? (
-                    <h3>Loading...</h3>
-                ): (
-                    <img className="itemImagePreview" src={image}/>
-                )}
+                { editMode ? ( <img src={clothing.itemImage} style={{width: '300px'}}/>) : ( <h3>image not found</h3> )}
+
+                {loading ? ( <h3>Loading...</h3>) : (<img src={image} style={{width: '300px'}}/>)}
+
+
             </div>
             <fieldset>
 

@@ -1,6 +1,6 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import "./Logins.css"
-import logo from "./fittedNavBar.png"
+import logo from "./fittedNavBarIcon.png"
 
 const Register = props => {
     const username = useRef()
@@ -19,6 +19,28 @@ const Register = props => {
             })
     }
 
+    const [ image, setImage] = useState('')
+    const [ loading, setLoading] = useState(false)
+
+    const uploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'fitted')
+        setLoading(true)
+        const res = await fetch(
+           ' https://api.cloudinary.com/v1_1/kmpcldnry/image/upload ', 
+           {
+               method: 'POST', 
+               body: data
+           }
+        )
+        const file = await res.json()
+
+        setImage(file.secure_url)
+        setLoading(false)
+    }
+
     const handleRegister = (e) => {
         e.preventDefault()
 
@@ -34,6 +56,7 @@ const Register = props => {
                             username: username.current.value,
                             email: email.current.value,
                             password: password.current.value,
+                            profilPic: image
                         })
                     })
                         .then(_ => _.json())
@@ -52,10 +75,10 @@ const Register = props => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <div className="navBarLogo">
+                <div className="registerLogo">
                         <img src={logo} alt="logo"></img>
                     </div>
-                <h2 className="h3 mb-3 font-weight-normal">Register</h2>
+                <h2 className="h3 mb-3 font-weight-normal signIn">Register</h2>
                 <fieldset>
                     <label htmlFor="inputUsername"> Username </label>
                     <input ref={username} type="username"
@@ -88,9 +111,25 @@ const Register = props => {
                         placeholder="Verify password"
                         required />
                 </fieldset>
-                <fieldset>
+                <div className="imageUpload">
+                <label class="custom-profilePic-upload"> Upload Profile Pic
+                <input
+                    type="file"
+                    name="file"
+                    placeholder="upload an image"
+                    className="form-control"
+                    onChange={uploadImage}
+                    />
+                </label>
+                {loading ? (
+                    <h3>Loading...</h3>
+                ): (
+                    <img className="itemImagePreview" src={image} style={{width: '300px'}}/>
+                )}
+            </div>
+                <fieldset className="registrationButton">
                     <button type="submit">
-                        Sign in
+                        Register
                     </button>
                 </fieldset>
             </form>

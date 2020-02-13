@@ -5,9 +5,6 @@ const Dashboard = props => {
 return (
     <main className="container--dashboard">
         <section>
-            <div className="favoritesList">
-                Favorites
-            </div>
             <div className="filterList">
             <div className="clothingTypeFilters">
                 <button className="topFilter" onClick={() => 

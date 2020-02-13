@@ -45,3 +45,21 @@
     height: 21rem;
 }
 
+.previewFitPic {
+    width: 12rem;
+    height: 15rem;
+    margin-left: .5rem; 
+
+}
+
+
+
+.saveInputSection {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.saveInputSection select{
+    margin-top: 1rem;
+}
+

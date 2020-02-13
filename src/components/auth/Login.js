@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Logins.css"
-import logo from "./fittedNavBar.png"
+import logo from "./fittedNavBarIcon.png"
 
 
 const Login = props => {
@@ -40,10 +40,10 @@ const Login = props => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <div className="navBarLogo">
+                    <div className="registerLogo">
                         <img src={logo} alt="logo"></img>
                     </div>
-                    <h2>Please sign in</h2>
+                    <h2 className="signIn">Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username</label>
                         <input ref={username} type="username"

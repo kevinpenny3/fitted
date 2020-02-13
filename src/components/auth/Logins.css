@@ -2,6 +2,10 @@
     font-size: 2.5rem;
 }
 
+.signIn {
+    text-align: center;
+}
+
 fieldset {
     min-width: 0;
     padding: 1rem 0;
@@ -39,12 +43,29 @@ fieldset {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    /* border: 1px solid #ced4da; */
+    border: 1px solid #ced4da;
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+
+.custom-profilePic-upload {
+    width: 30rem;
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 
 .container--login {
     text-align: center;
@@ -63,16 +84,12 @@ fieldset {
     border-radius: .30rem;
 }
 
-.navBarLogo {
-    width: auto;
-    align-content: center;
+.registerLogo {
+    display: flex;
+    justify-content: center;
 }
 
-img{
-    padding: .5rem;
-    width:  40%;
-    height: 90%;
-}
+
 
 .link--register{
     margin-top: 1rem;
@@ -82,3 +99,9 @@ img{
     color: black;
     font-weight: bold;
 }
+
+.registrationButton button {
+    margin-left: auto;
+    margin-right: auto;
+}
+

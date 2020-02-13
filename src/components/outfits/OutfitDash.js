@@ -172,8 +172,8 @@ return (
             </div>
             </div>
             <div className="saveOutfitSection">
-                <div className="inputSection">
-            <div className="form-group imageUpload">
+                <div className="saveInputSection">
+            <div className="imageUpload">
                 <label class="custom-file-upload"> Upload Photo
                 <input
                     type="file"
@@ -213,7 +213,7 @@ return (
             {loading ? (
                     <h3>Loading...</h3>
                 ): (
-                    <img className="fullFitPreview" src={fullPicimage}/>
+                    <img className="previewFitPicImg" src={fullPicimage} style={{width: '200px'}}/>
                 )}
             </div>
             </div>

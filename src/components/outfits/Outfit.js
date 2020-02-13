@@ -7,14 +7,18 @@ import { ClothingOutfitContext } from "./ClothingOutfitProvider"
 export default ({ clothing, outfit, history }) => {
 
     const { clothingOutfits, updateclothingOutfits } = useContext(ClothingOutfitContext)
-    const { deleteOutfit } = useContext(OutfitContext)
+    const { deleteOutfit, patchOutfit } = useContext(OutfitContext)
 
     const { deleteClothing } = useContext(ClothingContext)
 
     const clothingOutfitTarget = clothingOutfits.filter(co => {
         return co.outfitId === outfit.id 
     })
-    console.log(clothingOutfitTarget, "clothing target")
+
+    var options = { year: "numeric", month:"numeric", day: "numeric"}
+    let todayDate = new Date();
+    let formatedDate = todayDate.toLocaleDateString("en-US", options);
+    let [useDate, foo] = formatedDate.split(",");
 
 
     if (outfit.fullFitPic !== "") {
@@ -28,7 +32,11 @@ export default ({ clothing, outfit, history }) => {
                     <div className="wearButton">
                         <button 
                             onClick={() => {
-                                history.push("/")
+                                const recentlyWorn = {
+                                    id: outfit.id,
+                                    dateWorn: useDate
+                                }
+                                patchOutfit(recentlyWorn).then(history.push("/"))
                                     }}
                         >
                         Wear It!</button>
@@ -64,12 +72,16 @@ export default ({ clothing, outfit, history }) => {
                         </div>
                         <div className="outfitControls">
                             <div className="wearButton">
-                        <button 
-                          onClick={() => {
-                                   history.push("/")
-                                }}
-                                >
-                                    Wear It!</button>
+                            <button 
+                            onClick={() => {
+                                const recentlyWorn = {
+                                    id: outfit.id,
+                                    dateWorn: useDate
+                                }
+                                patchOutfit(recentlyWorn).then(history.push("/"))
+                                    }}
+                        >
+                        Wear It!</button>
                         </div>
                         <div className="functionButtons">
                         <button 
