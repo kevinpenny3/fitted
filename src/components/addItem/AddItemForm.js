@@ -5,9 +5,18 @@ import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
 
 export default props => {
     const { clothings, addClothing, updateClothing } = useContext(ClothingContext)
-    const [clothing, setClothing] = useState({})
+    const [clothing, setClothing] = useState(
+        {
+            clothingTypeId: "",
+            color: "",
+            userId: "",
+            itemImage: ""
+        }
+    )
     const { clothingTypes } = useContext(ClothingTypeContext)
     const editMode = props.match.params.hasOwnProperty("clothingId")
+
+    console.log(editMode, "edit mode")
 
     const [ image, setImage] = useState('')
     const [ loading, setLoading] = useState(false)
@@ -86,21 +95,19 @@ export default props => {
             <h2 className="clothingForm__title">{editMode ? "Edit Clothing" : "Add New Item"}</h2>
 
             <div className=" imageUpload">
-
-
-                <label class="custom-file-upload"> Upload Photo
+            <label class="custom-file-upload"> Upload Photo
                 <input
                     type="file"
                     name="itemImage"
                     placeholder="upload an image"
-                    value = {image}
+                    // value = {image}
                     className="form-control"
                     onChange={editMode ? handleControlledInputChange : uploadImage}
                     />
                 </label>
-                { editMode ? ( <img src={clothing.itemImage} style={{width: '300px'}}/>) : ( <h3>image not found</h3> )}
-
                 {loading ? ( <h3>Loading...</h3>) : (<img src={image} style={{width: '300px'}}/>)}
+                { editMode ? ( <img src={clothing.itemImage} style={{width: '300px'}}/>) : ( "")}
+
 
 
             </div>
@@ -147,6 +154,13 @@ export default props => {
             <button type="submit" onClick={evt => 
                     {evt.preventDefault() 
                     constructNewClothing()
+                    setClothing( {
+                        clothingTypeId: "",
+                        color: "",
+                        userId: "",
+                        itemImage: ""
+                    }
+                    )
                     }}
                 className="btn btn-primary"> {editMode ? "Update Clothing": "Save Item"} </button>
         </form>
