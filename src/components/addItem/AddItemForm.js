@@ -57,6 +57,7 @@ export default props => {
             const clothingId = parseInt(props.match.params.clothingId)
             const selectedClothing = clothings.find(c => c.id === clothingId) || {}
             setClothing(selectedClothing)
+            setImage(selectedClothing.itemImage)
             console.log(selectedClothing)
         
         }
@@ -73,7 +74,7 @@ export default props => {
                 clothingTypeId: parseInt((clothing.clothingTypeId),10),
                 color: clothing.color,
                 userId: parseInt(localStorage.getItem("fitted_user"), 10),
-                itemImage: clothing.itemImage
+                itemImage: image
             })
                 .then(() => props.history.push(`/${clothing.clothingType.type}s/${clothing.clothingTypeId}`))
         } else {
@@ -102,11 +103,11 @@ export default props => {
                     placeholder="upload an image"
                     // value = {image}
                     className="form-control"
-                    onChange={editMode ? handleControlledInputChange : uploadImage}
+                    onChange={uploadImage}
                     />
                 </label>
                 {loading ? ( <h3>Loading...</h3>) : (<img src={image} style={{width: '300px'}}/>)}
-                { editMode ? ( <img src={clothing.itemImage} style={{width: '300px'}}/>) : ( "")}
+                
 
 
 
