@@ -63,3 +63,13 @@
     margin-top: 1rem;
 }
 
+.clothingTypeSelectors button {
+    cursor: pointer;
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.2rem;
+}
+
+.clothingTypeSelectors button:hover {
+    background-color: #8BCFB1;
+}

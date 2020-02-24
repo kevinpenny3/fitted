@@ -16,17 +16,17 @@
     flex-basis: 100%;
     list-style-type: none;
     text-align: center;
+    margin: .1rem;
 }
 
 .navbar__link {
     text-decoration: none;
     color: black;
-    padding: 1rem;
     align-content: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 img{
-    padding: .5rem;
+    padding: 1rem;
     width:  25%;
 }

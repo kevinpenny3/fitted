@@ -60,6 +60,11 @@ select {
     border-radius: .25rem;
 }
 
+.custom-file-upload:hover{
+    border: 1px solid #8BCFB1;
+    background-color: #8BCFB1;
+}
+
 
 
 .container--addItem {

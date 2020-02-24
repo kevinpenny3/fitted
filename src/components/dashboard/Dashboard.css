@@ -15,22 +15,57 @@
 }
 
 .filterList {
-    margin-top: 1rem;
     width: 98%;
     padding: 1rem;
+    margin-top: 3rem;
 }
 
 .clothingTypeFilters {
     display: flex;
     justify-content: center;
+    margin-top: 10rem;
+    cursor: pointer;
 }
-.clothingTypeFilters button {
-    margin: .2rem;
+
+.clothingTypeFilters img {
+    width: 25%;
 }
+
 .styleFilters {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 .styleFilters button {
-    margin: .2rem;
+    margin: .1rem;
+}
+
+
+.styleFilters img:hover {
+    background-color: rgba(139, 207, 178, 0.247);
+    border-radius: 5rem 0 0 5rem;
+}
+
+.clothingTypeFilters img:hover {
+    background-color: rgba(139, 207, 178, 0.247);
+    border-radius: 5rem 0 0 5rem;
+}
+
+.creationList {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    cursor: pointer;
+}
+
+.creationList img{
+    margin: 1rem;
+    width: 17%;
+    height: 17%;
+
+}
+
+.creationList img:hover {
+    background-color: rgba(139, 207, 178, 0.247);
+    border-radius: 1rem;
 }
