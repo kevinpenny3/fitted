@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 1500 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(0.901096,0,0,0.823912,141.221,26.094)">
-        <path d="M1490.49,18.21C1490.49,13.716 1487.15,10.068 1483.04,10.068L14.722,10.068C10.613,10.068 7.277,13.716 7.277,18.21L7.277,284.842C7.277,289.336 10.613,292.984 14.722,292.984L1483.04,292.984C1487.15,292.984 1490.49,289.336 1490.49,284.842L1490.49,18.21Z" style="fill:white;"/>
+        <path d="M1490.49,151.526C1490.49,73.453 1432.53,10.068 1361.14,10.068L136.618,10.068C65.233,10.068 7.277,73.453 7.277,151.526C7.277,229.599 65.233,292.984 136.618,292.984L1361.14,292.984C1432.53,292.984 1490.49,229.599 1490.49,151.526Z" style="fill:white;"/>
     </g>
     <g transform="matrix(1,0,0,1,-67.2279,67.3005)">
         <text x="478.301px" y="156.96px" style="font-family:'Rajdhani-Regular', 'Rajdhani';font-size:216.667px;">MY SHOES</text>

@@ -2,10 +2,11 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 1500 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(0.901096,0,0,0.823912,141.221,26.094)">
-        <path d="M1490.49,18.21C1490.49,13.716 1487.15,10.068 1483.04,10.068L14.722,10.068C10.613,10.068 7.277,13.716 7.277,18.21L7.277,284.842C7.277,289.336 10.613,292.984 14.722,292.984L1483.04,292.984C1487.15,292.984 1490.49,289.336 1490.49,284.842L1490.49,18.21Z" style="fill:white;"/>
+        <path d="M1490.49,151.526C1490.49,73.453 1432.53,10.068 1361.14,10.068L136.618,10.068C65.233,10.068 7.277,73.453 7.277,151.526C7.277,229.599 65.233,292.984 136.618,292.984L1361.14,292.984C1432.53,292.984 1490.49,229.599 1490.49,151.526Z" style="fill:white;"/>
     </g>
     <g transform="matrix(1,0,0,1,-182.489,42.9393)">
-        <text x="478.301px" y="156.96px" style="font-family:'Rajdhani-Regular', 'Rajdhani';font-size:170.833px;">M<tspan x="595.493px 678.005px 721.909px 811.255px 902.139px 993.022px 1073.48px 1167.78px 1262.08px 1354.85px 1444.36px 1481.95px 1562.41px " y="156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px ">Y ACCESSORIES</tspan></text>
+        <text x="478.301px" y="156.96px" style="font-family:'Rajdhani-Regular', 'Rajdhani';font-size:170.833px;">M<tspan x="595.493px " y="156.96px ">Y</tspan></text>
+        <text x="721.909px" y="156.96px" style="font-family:'Rajdhani-Regular', 'Rajdhani';font-size:170.833px;">A<tspan x="809.547px 898.722px 987.897px 1066.65px 1159.24px 1251.83px 1342.89px 1430.7px 1466.57px 1545.33px " y="156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px 156.96px ">CCESSORIES</tspan></text>
     </g>
     <g transform="matrix(1.13764,0,0,1.23043,-39.8529,-37.9503)">
         <path d="M289.539,150.661C289.539,86.723 233.395,34.813 164.242,34.813C95.089,34.813 38.945,86.723 38.945,150.661L38.945,155.175C38.945,219.113 95.089,271.023 164.242,271.023C233.395,271.023 289.539,219.113 289.539,155.175L289.539,150.661Z" style="fill:rgb(139,207,177);stroke:white;stroke-width:8.79px;"/>
