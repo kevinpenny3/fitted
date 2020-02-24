@@ -22,9 +22,7 @@ export default (props) => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/outfits">Find Fit</Link>
             </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/closet">View Closet</Link>
-            </li>
+        
         
 
 

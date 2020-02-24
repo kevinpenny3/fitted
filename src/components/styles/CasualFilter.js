@@ -30,7 +30,7 @@ export default (props) => {
 
         return(
             <div className="userOutfits">
-                <h1>My Outfits</h1>
+                <h1>My Casual Outfits</h1>
                 <article className="outfitList">
                      {
                     userOutfits.map(userOutfit => {

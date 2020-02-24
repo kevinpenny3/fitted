@@ -8,6 +8,7 @@
 .outfit--images img{
     width: 10rem;
     height: 10rem;
+    padding: .5rem !important;
 }
 
 .outfit--images {
@@ -74,11 +75,23 @@
 .fullFitPic img{
     height: 20rem;
     width: 20rem;
-    margin-left: 1rem;
+    margin-left: .5rem;
 }
 
-.fullFitPic {
-    margin-top: .5rem;
+
+.outfitStyleFilters {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin: 3rem 0 2rem 0;
 }
 
+.outfitStyleFilters img:hover {
+    background-color: rgba(139, 207, 178, 0.247);
+    border-radius: 5rem 0 0 5rem;
+}
+
+.outfitStyleFilters img {
+    width: 20%;
+}
 

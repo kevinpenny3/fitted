@@ -5,6 +5,9 @@ import { ClothingTypeContext } from "../clothing/ClothingTypeProvider"
 import { OutfitContext } from "./OutfitProvider"
 import { ClothingOutfitContext } from "./ClothingOutfitProvider"
 import Outfit from "./Outfit"
+import dressButton from "./dressFitsButton.svg"
+import workButton from "./workFitsButton.svg"
+import casualButton from "./casualFitsButton.svg"
 
 
 export default (props) => {
@@ -50,23 +53,19 @@ export default (props) => {
 
         return(
             <div className="userOutfits">
-                <h1>My Outfits</h1>
-                <div className="styleFilters">
-                <button className="casualFilter" onClick={() => 
+                <div className="outfitStyleFilters">
+                <img src={casualButton} className="casualFilter" onClick={() => 
                     props.history.push("/outfits/casual")
-                }
-                
-                >Casual</button>
-                <button className="bizCasualFilter" onClick={() => 
+                }/>
+
+                <img src={workButton} className="workFilter" onClick={() => 
                     props.history.push("/outfits/businessCasual")
-                }
-                
-                >Business Casual</button>
-                <button className="dressFilter" onClick={() => 
+                }/>
+
+                <img src={dressButton} className="dressFilter" onClick={() => 
                     props.history.push("/outfits/dress")
-                }
-                
-                >Dress</button>
+                }/>
+
             </div>
                 <article className="outfitList">
                      {
