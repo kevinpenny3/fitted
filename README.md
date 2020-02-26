@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Fitted is a full CRUD react app that allows users to catalog clothing items and build outfits. Fitted was created to relieve the stress and time of trying to look your best every morning.
 
-<img src="./public/fittedPreview.jpg">
+<img src="./fittedPreview.jpg">
 
 
 ### `npm start`
