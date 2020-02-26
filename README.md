@@ -64,3 +64,13 @@ npm start from the root directory to run application
   "dateWorn": []
 }
 ```
+## Usage
+
+1. User will register or login
+2. Click "Add Clothing"
+3. Upload a photo and fill out form for each article of clothing user chooses to add
+4. Once clothing is uploaded navigate to creating an outfit
+5. Select an item for each type of clothing(top, bottom, shoe, accessory)
+6. Upload a "Full Fit Pic" if you have one
+7. Choose an outfit style
+8. Navigate the app finding outfits, clothing and filtering by item
