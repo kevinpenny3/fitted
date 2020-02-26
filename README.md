@@ -1,8 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Fitted
 
-In the project directory, you can run:
+Fitted is a full CRUD react app that allows users to catalog clothing items and build outfits. Fitted was created to relieve the stress and time of trying to look your best every morning.
+
+<img src="./public/fittedPreview.jpg">
+
 
 ### `npm start`
 
