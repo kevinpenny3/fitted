@@ -15,7 +15,6 @@ With the ability to add clothing, create outfits and filter by style or select a
 
 ```bash
 npm i --save react-router-dom
-npm instal moment --save
 
 
 npm start from the root directory to run application
